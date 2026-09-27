@@ -1,0 +1,23 @@
+-- ============================================================
+-- ATecHS Hub — EVENTS MODULE: RETIRED FILE — DO NOT RUN
+-- ------------------------------------------------------------
+-- This file is kept only as a record that a separate
+-- `public.events` table was considered and REJECTED.
+--
+-- Architecture decision (final): there is NO events table.
+-- The `public.projects` table is the ONLY source of truth:
+--   planned/upcoming → Upcoming Events
+--   live             → Current Events
+--   accomplished     → Past Work
+-- Banner images come from `projects.media` (comma-separated URLs,
+-- first URL = card banner; see supabase/projects-reconcile.sql §2).
+--
+-- The CREATE TABLE statement that used to live here was removed
+-- because it contradicts the architecture above (and contained
+-- invalid SQL). To (re)build the database, run ONLY:
+--   supabase/projects-reconcile.sql
+-- ============================================================
+--
+-- (No executable statements below — this file intentionally does nothing.)
+-- ============================================================
+select 'events.sql is retired: events live in public.projects — run supabase/projects-reconcile.sql instead' as notice;
